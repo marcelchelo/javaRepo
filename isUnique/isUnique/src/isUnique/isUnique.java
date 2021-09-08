@@ -39,12 +39,11 @@ private static boolean isUnique(String word) {
 		int val = word.charAt(i);  //obtain ascii value at index I
 		//System.out.println(val); //print the value to screen   (not needed)
 		if(char_set[val] ) { //we are essentially putting char a in index 97(its corresponding ascii value) and checking if it exists there. If it does return false bc it is a repeat.
-			System.out.println("Repeated letter is: " + char_set[i]);
 			return false;
 		}
-		//Test, Print the index location of letter m
 		
-		System.out.println(char_set[109]);  //Test Location 109 is for letter m.  it will return true  if word is marcelo
+		//Test, Print the index location of letter m
+		System.out.println(char_set[109]);  //Test Location 109 is for letter m.  it will return true  if word is marcelo (my name)
 		char_set[val] = true;    
 		
 		
