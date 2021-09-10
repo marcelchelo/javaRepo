@@ -1,6 +1,9 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;  
+//Give an an array return index values where its content add up to a target. 
+//		Ex: {2,3,4,5,6}
+//		Target = 8;
+//		
+//		Return 0 ,4 and 1,3
+		
 public class twoSum {
 
 
