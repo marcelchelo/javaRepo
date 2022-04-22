@@ -12,7 +12,7 @@ public class twoSum {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		int numbers [] = {2,5,76,7};
+		int numbers [] = {2,5,16,7};
 		int target = 9;
 
 		System.out.println(twoSumOptimal(numbers, target)[0] + "  ,  " + twoSumOptimal(numbers, target)[1]);
@@ -50,14 +50,21 @@ public class twoSum {
 	private static int[] twoSumOptimal(int array [], int target) {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		
+		int solution [] = null;
+		
 		for (int i =0 ; i<array.length ; i++) {
 			if(map.containsKey(array[i])) {
-				return new int [] {map.get(array[i]), i}; 
-			}
+				return solution = new int [] {map.get(array[i]), i};
+	
+			}else {
 				map.put(target - array[i], i);
+				
+			
+			}
+			
 		}
 		
-		return new int[0];
+		return solution;
 		}
 		
 		
