@@ -1,6 +1,7 @@
 package isUnique;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 //Given a string the program should determine if the string is unique.  (has repeat characters)
@@ -23,9 +24,32 @@ public static void main (String [] args) {
 	String word = keyboard.nextLine();
 	
 	
-	System.out.println(isUnique(word));
+	System.out.println(isUnique2(word));
 	
 	
+}
+
+public static boolean isUnique2(String word) {
+	// Create hash table
+	HashMap<Character, Integer> stringHash = new HashMap<Character, Integer>();
+	
+	//put each char in a hashtable/counter
+	for(char letter: word.toCharArray()) {
+		//stringHash.containsKey(letter) ?      -> pretty readable check if
+		stringHash.put(letter, stringHash.containsKey(letter) ?   //if this is true   do next line until :   else do whatever is after :     (conditional operator )
+								(stringHash.get(letter)+1) : 1);
+		
+	}
+	
+	System.out.println(stringHash);
+	
+    for ( Integer value: stringHash.values()) {
+        if ( value != 1) {
+            return false;
+        }
+    }
+	
+	return true;
 }
 
 private static boolean isUnique(String word) {
@@ -38,7 +62,7 @@ private static boolean isUnique(String word) {
 	for (int i=0 ; i<word.length(); i++) {//traverse the  given word.
 		int val = word.charAt(i);  //obtain ascii value at index I
 		//System.out.println(val); //print the value to screen   (not needed)
-		if(char_set[val] ) { //we are essentially putting char a in index 97(its corresponding ascii value) and checking if it exists there. If it does return false bc it is a repeat.
+		if(char_set[val] ) { //we are essentially putting char a in index 97(its corresponding ascii value) and checking if it exists there. If it does, return false bc it is a repeat.
 			return false;
 		}
 		
