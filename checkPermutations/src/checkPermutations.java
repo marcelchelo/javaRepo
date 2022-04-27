@@ -31,6 +31,7 @@ public class checkPermutations {
 		
 		boolean result =  isPerm(word1 , word2); 
 		
+		
 		System.out.print(result);
 		
 	}
@@ -52,21 +53,25 @@ public class checkPermutations {
 		if( word1.length() != word2.length()) {
 			return false;
 		}
-		
-		
-		//Try to fix this.
-//		boolean solution = false;
-//		if( sort(word1) == (sort(word2))) {
-//			
-//			solution = true;
-//		}
 	
 		
 		return sort(word1).contentEquals(sort(word2));
 		
 		
+	}
+	
+	public static boolean isPerm2(String word1 , String word2) {
+		//Another solution that uses more memory but is fater
+		//initialize an array of size 26 for each letter of the alphabet
+		// ++1 every time same character appears, at the index of the char's ascii value. 
+		//to check second word --1 every time a character appears. 
+		//final solution chould have an array of 0's or null.  Else it is not a permutation. 
 		
+		int [] anArray = new int[10];
 		
+		 
+		
+		return false;
 		
 		
 		
